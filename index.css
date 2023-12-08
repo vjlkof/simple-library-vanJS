@@ -1,0 +1,9 @@
+.title {
+  background-color: red;
+}
+
+.dataInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
