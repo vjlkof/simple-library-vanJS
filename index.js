@@ -29,6 +29,7 @@ const dialog = document.querySelector("#bookDialog");
 const newBtn = document.querySelector(".button-new");
 newBtn.addEventListener("click", () => {
   dialog.showModal();
+  addForm.reset();
 });
 const closeBtn = document.querySelector(".button-close");
 closeBtn.addEventListener("click", () => {
@@ -40,6 +41,7 @@ const authorValue = document.querySelector("#input-author");
 const numberValue = document.querySelector("#input-number");
 const readValue = document.querySelector("#input-read");
 
+const addForm = document.querySelector(".add-form");
 const addBtn = document.querySelector(".button-add");
 addBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -49,10 +51,6 @@ addBtn.addEventListener("click", (event) => {
     numberValue.value,
     readValue.checked
   );
-  titleValue.value = "";
-  authorValue.value = "";
-  numberValue.value = "";
-  readValue.checked = false;
   dialog.close();
 });
 
@@ -92,13 +90,10 @@ function bookReadToggle(id) {
       break;
     }
   }
-  console.log("myLibrary", myLibrary);
   const bookTochange = document.querySelector(`#id-${id}`);
   const toggleButtonToChange = bookTochange.querySelector(".toggle-button");
-  console.log(toggleButtonToChange.textContent);
   toggleButtonToChange.textContent =
     toggleButtonToChange.textContent === "No" ? "Yes" : "No";
-  console.log(toggleButtonToChange.textContent);
 }
 
 function displayBook(book) {
