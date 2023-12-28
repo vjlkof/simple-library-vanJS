@@ -15,12 +15,24 @@ let myLibrary = [
   },
 ];
 
-function Book(id, title, author, numberOfPages, readIt) {
-  this.id = id;
-  this.title = title;
-  this.author = author;
-  this.numberOfPages = numberOfPages;
-  this.readIt = readIt;
+// Function factory way
+// function Book(id, title, author, numberOfPages, readIt) {
+//   this.id = id;
+//   this.title = title;
+//   this.author = author;
+//   this.numberOfPages = numberOfPages;
+//   this.readIt = readIt;
+// }
+
+// Class way
+class Book {
+  constructor(id, title, author, numberOfPages, readIt) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+    this.numberOfPages = numberOfPages;
+    this.readIt = readIt;
+  }
 }
 
 let title = document.getElementsByClassName("title");
